@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://1lhn8opojfc8"]
+
+[ext_resource type="Shader" uid="uid://dusr7qdql7win" path="res://pixelate.tres" id="1_hrroc"]
+[ext_resource type="Texture2D" uid="uid://c66ygpslrci6" path="res://icon.svg" id="2_fo07c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3oms"]
+vertex_color_is_srgb = true
+albedo_color = Color(0.435294, 0.945098, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7s2g"]
+albedo_color = Color(0.529412, 0.584314, 0.698039, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bafsn"]
+albedo_color = Color(0.4, 0.4, 0.4, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ymcur"]
+shader = ExtResource("1_hrroc")
+shader_parameter/Pixelisation = 256.0
+
+[node name="Main" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(4.66402, 0, 0, 0, 0.38157, 0, 0, 0, 4.60115, 0.00670671, -0.00461829, 0.0118757)
+material = SubResource("StandardMaterial3D_n3oms")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.932349, 0.136548, -0.334784, -2.74733e-09, 0.925943, 0.377663, 0.36156, -0.352114, 0.863302, -0.277976, 0.757006, 0.292973)
+fov = 45.5
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.783258, -0.314222, 0.536443, 0.00288481, 0.864697, 0.502285, -0.621689, -0.391871, 0.678188, 2.81084, 1.14001, 2.36046)
+light_energy = 0.2
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_opacity = 0.4
+shadow_blur = 0.0
+
+[node name="Pillars" type="Node" parent="."]
+
+[node name="Pillar" type="CSGCylinder3D" parent="Pillars"]
+transform = Transform3D(0.084187, 0.0455503, 0, -0.0139295, 0.275296, 0, 0, 0, 0.0787199, 0.415154, 0.206062, -0.821366)
+radius = 0.389545
+sides = 20
+smooth_faces = false
+
+[node name="Pillar2" type="CSGCylinder3D" parent="Pillars"]
+transform = Transform3D(0.114292, 0.116128, 0.00753966, -0.0137395, 0.883398, -0.0296073, -0.00754686, 0.150397, 0.168085, 0.176395, 0.00114146, -0.310025)
+radius = 0.389545
+sides = 20
+smooth_faces = false
+
+[node name="Pillar3" type="CSGCylinder3D" parent="Pillars"]
+transform = Transform3D(0.085208, 0.0150123, 0, -0.0044266, 0.268667, -0.0208675, -0.00121696, 0.0738619, 0.0759037, 0.369427, 0.352425, -0.486912)
+radius = 0.389545
+sides = 20
+smooth_faces = false
+
+[node name="Pillar4" type="CSGCylinder3D" parent="Pillars"]
+transform = Transform3D(0.0838716, -0.0513966, 0, 0.0157174, 0.274265, 0, 0, 0, 0.0787199, -0.334594, 0.25232, -0.429219)
+radius = 0.389545
+sides = 20
+smooth_faces = false
+
+[node name="Pillar5" type="CSGCylinder3D" parent="Pillars"]
+transform = Transform3D(0.107644, -0.324955, 0, 0.0414867, 0.843149, 0, 0, 0, 0.170839, -0.0782381, -0.223962, -0.88357)
+radius = 0.389545
+sides = 20
+smooth_faces = false
+material = SubResource("StandardMaterial3D_a7s2g")
+
+[node name="Pillar6" type="CSGCylinder3D" parent="Pillars"]
+transform = Transform3D(0.0838716, -0.0513966, 0, 0.0157174, 0.274265, 0, 0, 0, 0.0787199, -0.240192, 0.220809, -0.690685)
+radius = 0.389545
+sides = 20
+smooth_faces = false
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.977098, 0, -0.212792, 0, 1, 0, 0.212792, 0, 0.977098, 0.0120327, 0.179241, -0.496883)
+size = Vector3(0.336961, 0.0158708, 0.0819796)
+material = SubResource("StandardMaterial3D_bafsn")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.982755, 0, 0.184912, 0, 1, 0, -0.184912, 0, 0.982755, 0.0120327, 0.179241, -0.675259)
+size = Vector3(0.336961, 0.0158708, 0.0819796)
+material = SubResource("StandardMaterial3D_bafsn")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999621, 0, 0.0275204, 0, 1, 0, -0.0275204, 0, 0.999621, 0.0120327, 0.179241, -0.873272)
+size = Vector3(0.336961, 0.0158708, 0.0819796)
+material = SubResource("StandardMaterial3D_bafsn")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.942612, 0, -0.333889, 0, 1, 0, 0.333889, 0, 0.942612, -0.0556097, 0.179241, -0.317957)
+size = Vector3(0.336961, 0.0158708, 0.0819796)
+material = SubResource("StandardMaterial3D_bafsn")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.746362, -0.0211937, -0.665203, 0.545195, -0.553782, 0.629355, -0.381716, -0.832392, -0.401767, -0.290402, 0.488183, -0.881073)
+light_color = Color(0.890196, 0.27451, 0.360784, 1)
+shadow_enabled = true
+spot_range = 1.298
+
+[node name="Pixelshader" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ymcur")
+position = Vector2(573.5, 323.5)
+scale = Vector2(8.96094, 5.03906)
+texture = ExtResource("2_fo07c")
