@@ -10,7 +10,6 @@ hint = 2
 min = 256.0
 max = 512.0
 step = 2.0
-default_value_enabled = true
 default_value = 2000.0
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_07sto"]
@@ -39,7 +38,7 @@ operator = 3
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
-uniform float Pixelisation : hint_range(256, 512, 2) = 2000;
+uniform float Pixelisation : hint_range(256, 512, 2);
 uniform sampler2D screen_tex_frg_7 : hint_screen_texture;
 
 
@@ -76,7 +75,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-284.718, 168.279)
+graph_offset = Vector2(-190.273, -74.2968)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(840, 140)
